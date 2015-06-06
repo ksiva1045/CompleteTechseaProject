@@ -30,6 +30,9 @@ public class InsertDeptServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String flag = "false";
 		response.setContentType("text/html");
+		
+		System.out.println("Its an addition line");
+		
 try{
 		TableOperationsStub table = new TableOperationsStub();
 		
