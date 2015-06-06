@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="com.techsea.Emp" table="EMP1">
+      
+      <id name="id" type="string" column="emp_no">
+        
+      </id>
+      <property name="username" column="userid" type="string"/>
+      <property name="password" column="password" type="string"/>
+     
+   </class>
+   
+   <sql-query name="login" callable="true">
+   <return class="com.techsea.Emp"></return>
+   {call logincredential(?)}
+   </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,807 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+<class name="com.support.Dept"  table="DEPT" >
+<id name="deptNo" column="DEPTNO"/>
+<property name="deptName" column="DEPTNAME"/>
+<property name="location" column="LOCATION"/>
+<property name="createdUserId" column="CREATED_USERID"/>
+<property name="userCreatedDate" column="CREATED_DATE"/>
+<property name="lastModifiedUserId" column="LAST_MODIFIED_USERID"/>
+<property name="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+</class>
+
+<class name="com.support.ProductSpecification"  table="PRODUCT_SPECIFICATION" >
+<id name="product_spec_id" column="PRODUCT_SPECIFICATION_ID"/>
+<property name="product_typecode" column="PRODUCT_TYPE_CODE"/>
+<property name="product_colour" column="PRODUCT_COLOUR"/>
+<property name="product_size" column="PRODUCT_SIZE"/>
+<property name="product_features" column="PRODUCT_FEATURES"/>
+<property name="product_quality4" column="PRODUCT_QUALITY_4"/>
+<property name="product_quality5" column="PRODUCT_QUALITY__5"/>
+<property name="product_quality6" column="PRODUCT_QUALITY__6"/>
+<property name="product_quality7" column="PRODUCT_QUALITY__7"/>
+<property name="product_quality8" column="PRODUCT_QUALITY__8"/>
+<property name="product_quality9" column="PRODUCT_QUALITY__9"/>
+<property name="product_quality10" column="PRODUCT_QUALITY__10"/>
+<property name="product_id" column="PRODUCT_ID"/>
+</class>
+
+
+<class name="com.support.ProductCatStatic"  table="PRODUCT_CATEGORY_STATIC" >
+<id name="productcategorystatic" column="PRODUCT_CATEGORY_STATIC"/>
+<property name="productquality1" column="PRODUCT_QUALITY_1"/>
+<property name="productquality2" column="PRODUCT_QUALITY_2"/>
+<property name="productquality3" column="PRODUCT_QUALITY_3"/>
+<property name="productquality4" column="PRODUCT_QUALITY_4"/>
+<property name="productquality5" column="PRODUCT_QUALITY_5"/>
+<property name="productquality6" column="PRODUCT_QUALITY_6"/>
+<property name="productquality7" column="PRODUCT_QUALITY_7"/>
+<property name="productquality8" column="PRODUCT_QUALITY_8"/>
+<property name="productquality9" column="PRODUCT_QUALITY_9"/>
+<property name="productquality10" column="PRODUCT_QUALITY_10"/>
+<property name="productcatid" column="PRODUCT_CAT_ID"/>
+</class>
+
+
+<class name="com.support.Deal"  table="DEAL" >
+<id name="dealId" column="DEAL_ID"/>
+<property name="dealName" column="DEAL_NAME"/>
+<property name="dealDetails" column="DEAL_DETAILS"/>
+<property name="productId" column="PRODUCT_ID"/>
+<property name="sellerId" column="SELLER_ID"/>
+<property name="startDate" column="START_DATE"/>
+<property name="endDate" column="END_DATE"/>
+<property name="createdUserId" column="CREATED_USERID"/>
+<property name="userCreatedDate" column="CREATED_DATE"/>
+<property name="lastModifiedUserId" column="LAST_MODIFIED_USERID"/>
+<property name="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+</class>
+
+
+ <class name="com.support.ProductBean"  table="Products" >
+ 			<id name="productId"  			      column="PRODUCT_ID"/>
+      <property  name="productCode"  	          column="PRODUCT_TYPE_CODE"/>
+      <property  name="productName"               column="PRODUCT_NAME"/>
+      <property  name="price"                     column="PRODUCT_PRICE"/>
+      <property  name="prouduct_cat_id"           column="PRODUCT_CAT_ID"/>
+     	<property name="serviceCode"              column="PRODUCT_SERVICE_CODE"/>
+	   <property  name="createdUserID"             column="CREATED_USERID"/>
+      <property  name="createdDate"               column="CREATED_DATE"/>
+      <property  name="lastModifiedUserID"        column="LAST_MODIFIED_USERID"/>
+      <property  name="lastModifiedDate"          column="LAST_MODIFIED_DATE"/>
+        
+</class>
+
+    <class name="com.support.Emp"  table="EMPLOYEE" >
+ 	<id name="eno"  			  column="EMP_NO"/>
+      <property  name="ename"  	          column="EMP_NAME"/>
+      <property  name="eskill"            column="EMP_SKILL"/>
+      <property  name="epdesc"            column="EMP_PROJECT_DESC"/>
+      <property  name="hiredate"          column="HIRE_DATE"/>
+      <property  name="mname"             column="MANAGER_NAME"/>
+      <property  name="dno"               column="DEPTNO"/>
+      <property  name="uid"               column="USERID"/>
+      <property  name="pswd"              column="PASSWORD"/>
+      <property  name="cuid"              column="CREATED_USERID"/>
+      <property  name="cdate"             column="CREATED_DATE"/>
+      <property  name="lmuid"             column="LAST_MODIFIED_USERID"/>
+      <property  name="lmdate"            column="LAST_MODIFIED_DATE"/>
+        
+</class>
+
+
+
+<class name="com.support.Seller"  table="Seller" >
+<id name="sid" column="SELLER_ID"/>
+<property name="sName" column="SELLER_NAME"/>
+<property name="createdUserId" column="CREATED_USERID"/>
+<property name="CreatedDate" column="CREATED_DATE"/>
+<property name="lastModifiedUserId" column="LAST_MODIFIED_USERID"/>
+<property name="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+<property name="sellerAddress" column="SELLER_ADDRESS"/>
+<property name="sellerType" column="SELLER_TYPE"/>
+
+<property name="sPincode" column="SELLER_PINCODE"/>
+<property name="sellerEmpContactNo" column="SELLER_EMPLOYEE_CONTACT_NO"/>
+<property name="sMarketingNo" column="SELLER_MARKETING_NO"/>
+<property name="sManagerNo" column="SELLER_MANAGER_NO"/>
+<property name="sMarketingMailId" column="SELLER_MARKETING_EMAILID"/>
+<property name="sBusinessMailId" column="SELLER_BUSINESS_EMAIL_ID"/>
+<property name="bestTimeToContact" column="BEST_TIMETO_CONTACT"/>
+
+<property name="contactFrequency" column="CONTACT_FREQUENCY"/>
+<property name="sellerCatId" column="SELLER_CAT_ID"/>
+
+</class>
+
+
+  <class  name="com.support.ProductCat"  table="Product_Catagories ">
+       <id name="id"   column="PRODUCT_CAT_ID"  />
+       <property  name="pname"  column="PROD_CATAGORY_NAME" />
+       <property  name="pdetails"  column="PROD_CATAGORY_DETAILS"  />
+       <property  name="prod_parent_id"  column="PRODUCT_PARENT_ID"  />
+              <property  name="cuid"  column="CREATED_USERID"  />
+              <property  name="cdate"  column="CREATED_DATE"  /> 
+              <property  name="lmuid"  column="LAST_MODIFIED_USERID"  />
+            <property  name="lmdate"  column="LAST_MODIFIED_DATE"  /> 
+       
+       
+       
+  </class>
+  
+
+
+
+<class name="com.support.Coupon"  table="COUPON" >
+<id name="couponId" column="COUPON_ID"/>
+<property name="couponName" column="COUPON_NAME"/>
+<property name="couponDetails" column="COUPON_DETAILS"/>
+<property name="couponCode" column="COUPON_CODE"/>
+<property name="sellerId" column="SELLER_ID"/>
+<property name="issueDate" column="ISSUE_DATE"/>
+<property name="expireDate" column="EXPIRY_DATE"/>
+<property name="createdUserId" column="CREATED_USERID"/>
+<property name="userCreatedDate" column="CREATED_DATE"/>
+<property name="lastModifiedUserId" column="LAST_MODIFIED_USERID"/>
+<property name="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+</class>
+
+
+
+
+
+<class name="com.support.Customer"  table="Customer" >
+<id name="customerid" column="CUSTOMER_ID"/>
+<property name="gender" column="GENDER"/>
+<property name="firstname" column="FIRST_NAME"/>
+<property name="middlename" column="MIDDLE_NAME"/>
+<property name="lastname" column="LAST_NAME"/>
+<property name="email" column="EMAIL_ADDRESS"/>
+<property name="loginname" column="LOGIN_NAME"/>
+<property name="loginpassword" column="LOGIN_PASSWORD"/>
+<property name="phonenumber" column="PHONE_NUMBER"/>
+<property name="add1" column="ADDRESS_1"/>
+<property name="add2" column="ADDRESS_2"/>
+<property name="add3" column="ADDRESS_3"/>
+<property name="add4" column="ADDRESS_4"/>
+<property name="city" column="CITY"/>
+<property name="state" column="STATE"/>
+<property name="country" column="COUNTRY"/>
+<property name="zipcode" column="ZIP_CODE"/>
+</class>
+
+
+
+<class name="com.support.Area"  table="area_lat_long" >
+<id name="SNO" column="SNO"/>
+<property name="AREA" column="AREA"/>
+<property name="LATTITUDE" column="LATTITUDE"/>
+<property name="LONGITUDE" column="LONGITUDE"/>
+<property name="CITY_NAME" column="CITY_NAME"/>
+</class>
+
+
+<class name="com.support.SellerProduct"  table="PRODUCT_SELLER" >
+<id name="psid" column="PRODUCT_SELLER_ID"/>
+<property name="pid" column="PRODUCT_ID"/>
+<property name="sid" column="SELLER_ID"/>
+<property name="psprice" column="PRODUCT_SELLER_PRICE"/>
+</class>
+
+
+
+<class name="com.support.Caller"  table="Customercalls" >
+<id name="callerId" column="CALL_ID"/>															
+<property name="costomerID" column="CUSTOMER_ID"/>
+<property name="callerSearchInfo" column="CALLER_SEARCH_INFO"/>
+<property name="callerSentInfo" column="CALLER_SENT_INFO"/>
+<property name="sentInfoUserId" column="SENT_INFO_USERID"/>
+<property name="callDuration" column="CALL_DURATION"/>
+<property name="empId" column="EMP_ID"/>
+</class>
+
+
+        <class name="com.support.CustomerPaymentMethod" table="CUSTOMER_PAYMENT_METHOD">
+        <id column="CUSTOMER_PAYMENT_ID" name="customerPaymentId" />
+        <property column="CUSTOMER_ID" name="customerId" />
+        <property column="PAYMENT_METHOD_CODE" name="paymentMethodCode" />     
+        <property column="PAYMENT_METHOD_DETAILS1" name="paymentMethodDetails1"></property>
+          <property column="PAYMENT_METHOD_DETAILS2" name="paymentMethodDetails2"></property>
+    </class>
+    
+    
+    <class name="com.support.OrderItems" table="ORDER_ITEMS">
+               <id name="orderItemId" column="ORDER_ITEM_ID" >
+               <generator class="assigned"/>           
+              </id>
+              <property name="productId"   column="PRODUCT_ID">
+                         
+              </property>
+              <property name="orderItemStatusCode" column="ORDER_ITEM_STATUS_CODE">
+                        
+              </property>
+               <property name="orderItemQuantity" column="ORDER_ITEM_QUANTITY">
+                        
+              </property>
+               <property name="orderItemPrice" column="ORDER_ITEM_PRICE">
+                        
+              </property>
+               <property name="merchantAuthNbr" column="MERCHANT_AUTH_NBR">
+                        
+              </property>
+               <property name="merchantIssuedBy" column="MERCHANT_ISSUED_BY">
+                        
+              </property>
+              
+               <property name="otherOrderItemsDetails" column="OTHER_ORDER_ITEM_DETAILS">
+                        
+              </property>
+               <property name="sellerId" column="SELLER_ID">
+                        
+              </property>
+               <property name="merchantAuthDate" column="MERCHANT_AUTH_DATE">
+                        
+              </property>
+               <property name="orderId" column="ORDER_ID">
+                        
+              </property>
+            </class>
+            
+            
+            
+            
+    <class name="com.support.Invoices" table="INVOICES">  
+    <id  name="INVOICE_ID" column="INVOICE_ID"/>  
+    <property name="ORDER_ID" column="ORDER_ID"/>  
+    <property name="INVOICE_STATUS_CODE" column="INVOICE_STATUS_CODE"/> 
+    <property name="INVOICE_DATE" column="INVOICE_DATE"/>
+    <property name="INVOICE_DETAILS" column="INVOICE_DETAILS"/>
+    </class>  
+    
+    
+    
+     <class name="com.support.Shipments" table="SHIPMENTS" >
+<id name="shipmentId" column="SHIPMENT_ID"/>
+<property name="orderId" column="ORDER_ID"/>
+<property name="invoiceId" column="INVOICE_ID"/>
+<property name="shipmentDate" column="SHIPMENT_DATE"/>
+<property name="shipmentDetails" column="SHIPMENT_DETAILS"/>
+<property name="shipmentTrackingNumber" column="SHIPMENT_TRACKING_NUMBER"/>
+</class>
+
+
+<class name="com.support.Order" table="ORDERS">
+        <id column="ORDER_ID" name="orderId" />
+        <property column="CUSTOMER_ID" name="customerId" />
+        <property column="ORDER_STATUS_CODE" name="orderStatusCode" />     
+        <property column="ORDER_DETAILS" name="orderDetails"/>
+          <property column="ORDER_PLACE_DATE" name="orderPlaceDate"/>
+          </class>
+          
+       
+  <class name="com.support.Payment" table="PAYMENTS">  
+    <id name="PAYMENT_ID" column="PAYMENT_ID"/>  
+    <property name="PAYMENT_DETAILS" column="PAYMENT_DETAILS"/>  
+    <property name="INVOICE_ID" column="INVOICE_ID"/>  
+    <property name="PAYMENT_STATUS" column="PAYMENT_STATUS"/> 
+     <property name="PAYMENT_DATE" column="PAYMENT_DATE"/> 
+     <property name="PAYMENT_AMOUNT" column="PAYMENT_AMOUNT"/>   
+  </class>       
+  
+  
+  
+          
+          <sql-query name="insertOrder">
+    	{call ORDER_INSERT(:customerId,:orderStatusCode,:orderDetails,:orderPlaceDate)}
+    </sql-query>
+    <sql-query name="updateOrder">
+    	
+    	{call ORDER_UPDATE(:orderId,:customerId,:orderStatusCode,:orderDetails,:orderPlaceDate)}
+    </sql-query>
+    <sql-query name="deleteOrder">
+    	{call ORDER_DELETE(:orderId)}
+    </sql-query>
+    <sql-query name="selectAllOrder" callable="true">
+    <return class="com.support.Order"/>
+    		{call ORDER_SELECTALL(?)}
+    </sql-query>
+    <sql-query name="selectByIdOrder" callable="true">
+    <return class="com.support.Order"/>
+    		{call ORDER_SELECT(?,:orderId)}
+    
+    </sql-query>
+     
+  <sql-query name="insertShipments">   
+    {call SHIPMENT_INSERT(:ORDER_ID,:INVOICE_ID,:SHIPMENT_DATE,:SHIPMENT_DETAILS,:SHIPMENT_TRACKING_NUMBER)}
+</sql-query>
+
+<sql-query name="updateShipments">   
+    {call SHIPMENT_UPDATE(:SHIPMENT_ID,:ORDER_ID,:INVOICE_ID,:SHIPMENT_DATE,:SHIPMENT_DETAILS,:SHIPMENT_TRACKING_NUMBER)}
+</sql-query>
+
+<sql-query name="deleteShipments">   
+    {call SHIPMENT_DELETE(:SHIPMENT_ID)}
+</sql-query>
+
+<sql-query name="selectbyIdShipments" callable="true">
+    <return  class="com.support.Shipments">
+       
+    </return>
+    {CALL SHIPMENT_SELECTBYID(?,:SHIPMENT_ID)}
+</sql-query>
+
+<sql-query name="selectAllShipments" callable="true">
+    <return  class="com.support.Shipments">
+       
+    </return>
+    {call SHIPMENT_SELECTALL(?)}
+</sql-query>
+     
+          
+    
+ <sql-query name="insertORDER_ITEMS" >
+             
+               <![CDATA[CALL  INSERT_ORDER_ITEMS(:MERCHANT_AUTH_DATE,:PRODUCT_ID,:ORDER_ITEM_STATUS_CODE,
+               :ORDER_ITEM_QUANTITY,:ORDER_ITEM_PRICE,:MERCHANT_AUTH_NBR,:MERCHANT_ISSUED_BY,
+               :OTHER_ORDER_ITEM_DETAILS,:SELLER_ID,:ORDER_ID)]]>
+               </sql-query>
+             <sql-query name="deleteORDER_ITEMS" >
+                    <![CDATA[CALL  DELETE_ORDER_ITEMS(:ORDER_ITEM_ID)]]> 
+              </sql-query>
+              <sql-query name="updateORDER_ITEMS" >
+                    <![CDATA[CALL  UPDATE_ORDER_ITEMS(:ORDER_ITEM_ID,:PRODUCT_ID,:ORDER_ITEM_STATUS_CODE,:ORDER_ITEM_QUANTITY,:ORDER_ITEM_PRICE,:MERCHANT_AUTH_NBR,:MERCHANT_ISSUED_BY,:OTHER_ORDER_ITEM_DETAILS,:SELLER_ID,:MERCHANT_AUTH_DATE,:ORDER_ID)]]> 
+              </sql-query>
+                <sql-query name="SelectORDER_ITEMS" callable="true">
+             <return class="com.support.OrderItems"></return>
+               <![CDATA[CALL  SELECT_ORDER_ITEMS(?)]]>
+               </sql-query>
+                <sql-query name="SelectbyidORDER_ITEMS" callable="true">
+             <return class="com.support.OrderItems"></return>
+               <![CDATA[CALL  SELECTBYID_ORDER_ITEMS(?,:ORDER_ITEM_ID)]]>
+               </sql-query>
+ 
+
+    
+    <sql-query name="insertcaller">   
+    {call CUSTOMERCALLSINSERT(:costomerID,:callerSearchInfo,:callerSentInfo,:sentInfoUserId,:callDuration,:empId)}
+</sql-query>
+
+<sql-query name="selectallcaller" callable="true" > 
+ <return class="com.support.Caller" />
+ {call CUSTOMERCALLSSELECTALL(?)} 
+     </sql-query>  
+
+
+ <sql-query name="insertsellerproduct">   
+    {call SELLERPRODUCTINSERT(:SellerId,:ProductId,:SellerProductPrice)}
+</sql-query>
+
+<sql-query name="deletesellerproduct">   
+    {call SELLERPRODUCTDELETE(:SellerProductId)}
+</sql-query>
+
+ <sql-query name="SellerProductselectbyid" callable="true">
+    <return alias="ev" class="com.support.SellerProduct">
+       
+    </return>
+    <![CDATA[CALL  SELLERPRODUCTSELECT(?,:SellerProductId)]]>
+</sql-query>
+
+<sql-query name="updateSellerProduct">   
+    {call SELLERPRODUCTUPDATE(:SellerProductId,:SellerId,:ProductId,:SellerProductPrice)}
+</sql-query>
+
+<sql-query name="SellerProductselectall" callable="true" > 
+ <return class="com.support.SellerProduct" />
+ {call SELLERPRODUCTSELECTALL(?)} 
+</sql-query>
+
+
+<sql-query name="getLatLon" callable="true">   
+    <return class="com.support.Area" />
+     {call getAreas(?,:lattitude,:longitude,:lattitude1,:longitude1)}
+</sql-query>
+
+
+<sql-query name="getLatLonByWord" callable="true">   
+    <return class="com.support.Area" />
+     {call SEARCHAREABYWORD(?,:term)}
+</sql-query>
+
+
+<sql-query name="insertproductSpecification">   
+    {call PRODUCTSPECIFICATIONINSERTV1(:product_typecode,:product_colour,:product_size,:product_features,:productquality4,:productquality5,:productquality6,:productquality7,:productquality8,:productquality9,:productquality10)}
+</sql-query>
+
+
+<sql-query name="deleteproductspecification">   
+    {call PRODUCTSPECIFICATIONDELETEV1(:product_id)}
+</sql-query>
+
+
+<sql-query name="updateproductspecification">   
+    {call productspectficationupdatev1(:product_typecode,:product_colour,:product_size,:product_features,:productquality4,:productquality5,:productquality6,:productquality7,:productquality8,:productquality9,:productquality10,:product_id)}
+</sql-query>
+
+
+ <sql-query name="Productspecificationselectbyid" callable="true">
+    <return alias="ev" class="com.support.ProductSpecification">
+      
+    </return>
+    <![CDATA[CALL  PRODUCTSPECIFICATIONSEARCHV1(?,:product_id)]]>
+</sql-query>
+
+<sql-query name="ProductspecificationSelectAll" callable="true" > 
+ <return class="com.support.ProductSpecification" />
+ {call PRODUCTSPECIFICATIONSELECTV1(?)} 
+     </sql-query> 
+
+
+
+
+
+
+<sql-query name="insertproductcatstatic">   
+    {call ProductCatagoriesStaticInsert(:productquality1,:productquality2,:productquality3,:productquality4,:productquality5,:productquality6,:productquality7,:productquality8,:productquality9,:productquality10)}
+</sql-query>
+
+
+<sql-query name="deleteproductcatstatic">   
+    {call ProductCatagoriesStaticDelete(:productcatid)}
+</sql-query>
+
+
+<sql-query name="updateproducatcatstatic">   
+    {call ProductCatagoriesStaticUpdate(:productquality1,:productquality2,:productquality3,:productquality4,:productquality5,:productquality6,:productquality7,:productquality8,:productquality9,:productquality10,:productcatid)}
+</sql-query>
+
+
+ <sql-query name="ProductCatStaticselectbyid" callable="true">
+    <return alias="ev" class="com.support.ProductCatStatic">
+      
+    </return>
+    <![CDATA[CALL  ProductCatStaticSelect(?,:productcatid)]]>
+</sql-query>
+
+<sql-query name="ProductCatStaticSelectAll" callable="true" > 
+ <return class="com.support.ProductCatStatic" />
+ {call ProductCatagoriesStaticSelect(?)} 
+     </sql-query> 
+
+
+
+
+<sql-query name="insertproductcat">   
+    {call Productcatagoriesinsertv1(:pname,:pdetails,:product_parent_id,:cuid)}
+</sql-query>
+
+
+<sql-query name="deleteProductCat">   
+    {call Productcatagoriesdeletev1(:id)}
+</sql-query>
+
+
+<sql-query name="updateProducatCat">   
+    {call updateproductcatagoriesv1(:id,:pname,:pdetails,:prod_parent_id,:lmuid)}
+</sql-query>
+
+
+ <sql-query name="ProductCatselectbyid" callable="true">
+    <return alias="ev" class="com.support.ProductCat">
+       
+    </return>
+    <![CDATA[CALL  Productcatagoriessearchv1(?,:id)]]>
+</sql-query>
+
+ <sql-query name="selectByParentId" callable="true">
+    <return alias="ev" class="com.support.ProductCat">
+       
+    </return>
+    <![CDATA[CALL  PARENTCHILDSEARCH(?,:id)]]>
+</sql-query>
+
+<sql-query name="SelectAll" callable="true" > 
+ <return class="com.support.ProductCat" />
+ {call Productcatagoriesselectv1(?)} 
+     </sql-query> 
+
+  
+  
+  
+  
+
+<sql-query name="insertseller">   
+    {call insertsellersv1(:sName,:sellerAddress,:sellerType,:sPincode,:sellerEmpContactNo,:sMarketingNo,:sManagerNo,:sMarketingMailId,:sBusinessMailId,:bestTimeToContact,:contactFrequency,:sellerCatId,:cuid)}
+</sql-query>
+
+<sql-query name="updateseller">   
+    {call updatesellersv1(:sid,:sName,:sellerAddress,:sellerType,:sPincode,:sellerEmpContactNo,:sMarketingNo,:sManagerNo,:sMarketingMailId,:sBusinessMailId,:bestTimeToContact,:contactFrequency,:sellerCatId,:lastmodifieduserid)}
+</sql-query>
+<sql-query name="sellerSel" callable="true" > 
+ <return class="com.support.Seller" />
+ {call selectsellersv1(?)} 
+     </sql-query> 
+
+
+<sql-query name="deleteseller">   
+    {call deletesellersv1(:sid)}
+</sql-query>
+
+ <sql-query name="sellerselectbyid" callable="true">
+    <return alias="ev" class="com.support.Seller">
+       
+    </return>
+    <![CDATA[CALL searchsellers(?,:sid)]]>
+</sql-query>
+
+<sql-query name="insertemp">   
+    {call INSERTEMPloyeev1(:empname,:empskill,:empprodesc,:hiredate,:deptno,:managername,:userid,:pswd,:createduserid)}
+</sql-query>
+
+<sql-query name="deleteemp">   
+    {call deleteEmployeev1(:empno)}
+</sql-query>
+
+ <sql-query name="empselectbyid" callable="true">
+    <return alias="ev" class="com.support.Emp">
+       
+    </return>
+    <![CDATA[CALL  searchemployeev1(?,:eno)]]>
+</sql-query>
+
+<sql-query name="updateemp">   
+    {call updateEmployeev1(:empno,:empname,:empskill,:empprodesc,:hiredate,:managername,:deptno,:userid,:pswd,:lastmodifieduserid)}
+</sql-query>
+
+<sql-query name="selectemp" callable="true" > 
+ <return class="com.support.Emp" />
+ {call selectemployeev1(?)} 
+     </sql-query> 
+
+<sql-query name="insertproduct">   
+    {call insertproductsv1(:ptcode,:pname,:pprice,:pscode,:prod_cat_id,:cuid)}
+</sql-query>
+
+   <sql-query name="deleteproducts">   
+    {call deleteproductsv1(:pid)}
+</sql-query>
+
+ <sql-query name="productselectbyid" callable="true">
+    <return alias="ev" class="com.support.ProductBean">
+       
+    </return>
+    <![CDATA[CALL searchproducts(?,:pid)]]>
+</sql-query>
+
+ <sql-query name="getProductByWord" callable="true">
+    <return alias="ev" class="com.support.ProductBean">
+       
+    </return>
+    <![CDATA[CALL PRODUCTSEARCHBYWORD(?,:productname)]]>
+</sql-query>
+
+
+<sql-query name="updateproduct">   
+    {call updateproductsv1(:pid,:ptcode,:pname,:pprice,:pscode,:prod_cat_id,:lmuid)}
+</sql-query>
+
+<sql-query name="updateproducttoprating">   
+    {call UPDATEPRODUCTTOPRATING(:pid)}
+</sql-query>
+
+ <sql-query name="selectproduct" callable="true"> 
+ <return class="com.support.ProductBean"/>
+ {call selectproductsv1(?)} 
+     </sql-query> 
+
+
+
+
+
+
+<sql-query name="insertdept">   
+    {call deptinsertv1(:deptname,:location,:creteduserid)}
+</sql-query>
+
+<sql-query name="deletedept">   
+    {call deptdelete(:deptno)}
+</sql-query>
+
+ <sql-query name="deptselectbyid" callable="true">
+    <return alias="ev" class="com.support.Dept">
+       
+    </return>
+    <![CDATA[CALL  deptsearch(?,:dno)]]>
+</sql-query>
+
+<sql-query name="updatedept">   
+    {call deptupdate(:deptno,:deptname,:location,:lastmodifieduserid)}
+</sql-query>
+
+<sql-query name="deptSel" callable="true" > 
+ <return class="com.support.Dept" />
+ {call Deptselect(?)} 
+     </sql-query> 
+<!-- 
+<sql-query name="deptNames" callable="true" > 
+ <return class="com.support.DeptNames" />
+ {call getDeptNames(?)} 
+     </sql-query> 
+ -->
+<sql-query name="deptselectbyname" callable="true" > 
+ <return class="com.support.Dept" />
+ {call getdeptsearchbyname(?,:dname)} 
+     </sql-query> 
+     
+     
+     
+     
+     <sql-query name="insertdeal">   
+    {call dealinsertv1(:dealname,:dealdetails,:productid,:sellerid,:startdate,:enddate,:creteduserid)}
+</sql-query>
+
+<sql-query name="deletedeal">   
+    {call dealdeletev1(:dealid)}
+</sql-query>
+
+ <sql-query name="dealselectbyid" callable="true">
+    <return alias="ev" class="com.support.Deal">
+       
+    </return>
+    <![CDATA[CALL  dealsearchv1(?,:dealid)]]>
+</sql-query>
+
+<sql-query name="updatedeal">   
+    {call dealupdatev1(:dealid,:dealname,:dealdetails,:productid,:sellerid,:startdate,:enddate,:lastmodifieduserid)}
+</sql-query>
+
+<sql-query name="dealselectall" callable="true" > 
+ <return class="com.support.Deal" />
+ {call Dealselectv1(?)} 
+</sql-query>
+
+
+
+
+
+<sql-query name="insertcoupon">   
+    {call insertcouponsv1(:couponName,:couponCode,:couponDetails,:sellerId,:issueDate,:expireDate,:createdUserId)}
+</sql-query>
+
+<sql-query name="deletecoupon">   
+    {call deletecouponsv1(:couponId)}
+</sql-query>
+
+ <sql-query name="couponselectbyid" callable="true">
+    <return alias="ev" class="com.support.Coupon">
+       
+    </return>
+    <![CDATA[CALL  searchbycouponid(?,:couponId)]]>
+</sql-query>
+
+<sql-query name="updatecoupon">   
+    {call updatecouponsv1(:couponId,:couponName,:couponCode,:couponDetails,:sellerId,:issueDate,:expireDate,:lastModifiedUserId)}
+</sql-query>
+
+<sql-query name="couponselectall" callable="true" > 
+ <return class="com.support.Coupon" />
+ {call selectcouponsv1(?)} 
+</sql-query> 
+
+
+
+
+
+
+<sql-query name="insertcustomer">   
+    {call insertcustomerv1(:gender,:firstname,:middlename,:lastname,:email,:loginname,:loginpassword,:phonenumber,:add1,:add2,:add3,:add4,:city,:state,:country,:zipcode)}
+</sql-query>
+
+
+ <sql-query name="deletecustomer">   
+    {call deletecustomerv1(:customerid)}
+</sql-query>
+
+
+<sql-query name="updatecustomer">   
+    {call updatecustomerv1(:customerid,:gender,:firstname,:middlename,:lastname,:email,:loginname,:loginpassword,:phonenumber,:add1,:add2,:add3,:add4,:city,:state,:country,:zipcode)}
+</sql-query>
+
+
+ <sql-query name="customerselectbyid" callable="true">
+    <return alias="ev" class="com.support.Customer">
+       
+    </return>
+    <![CDATA[CALL  searchcustomerv1(?,:customerid)]]>
+</sql-query>
+<sql-query name="selectallcustomer" callable="true" > 
+ <return class="com.support.Customer" />
+ {call selectcustomerv1(?)} 
+     </sql-query> 
+     
+
+
+
+  <sql-query name="insertCustomerPamentMethod" >
+    
+   { call CUSTOMER_PAYMENT_METHOD_INSERT(:cid,:mcode,:dts1,:dts2)}
+    
+    </sql-query>
+    <sql-query name="updateCustomerPamentMethod">
+    { call CUSTOMER_PAYMENT_METHOD_UPDATE(:pid,:cid,:mcode,:dts1,:dts2)}
+    
+    </sql-query>
+    <sql-query name="deleteCustomerPamentMethod">
+    { call CUSTOMER_PAYMENT_METHOD_DELETE(:pid)}
+    </sql-query>
+    <sql-query name="selectallCustomerPamentMethod" callable="true">
+    	
+    <return class="com.support.CustomerPaymentMethod"/>
+    
+    { call CUSTOMER_PAYMENT_METHOD_SELECT(?)}
+    
+    </sql-query>
+    <sql-query name="selectByIdCustomerPamentMethod" callable="true">
+    	
+     <return class="com.support.CustomerPaymentMethod"/>
+    
+    { call CUSTOMER_PAYMENT_METHOD_SINGLE(?,:pid)}
+    </sql-query>
+
+
+
+<sql-query name="insertInvoices">
+     { call INVOICESINSERT(:INVOICE_ID,:ORDER_ID,:INVOICE_STATUS_CODE,:INVOICE_DATE,:INVOICE_DETAILS)}
+  </sql-query>
+  <sql-query name="updateInvoices">
+   {call INVOICEUPDATE(:INVOICE_ID,:ORDER_ID,:INVOICE_STATUS_CODE,:INVOICE_DATE,:INVOICE_DETAILS)}
+  </sql-query>
+  <sql-query name="deleteInvoices">
+   {call INVOICEDELETE(:INVOICE_ID)}
+  </sql-query>   
+   <sql-query name="selectByIdInvoices" callable="true">
+   	<return class="com.support.Invoices"></return>
+   	{call INVOICESSELECT(?,:INVOICE_ID)} 
+  </sql-query>  
+      <sql-query name="selectAllInvoices" callable="true">
+   	<return class="com.support.Invoices"></return>
+   	{call INVOICESELECTALL(?)} 
+  </sql-query>  
+  
+  
+   <sql-query name="paymentinsert">   
+    {call PAYMENT_INSERT(:PAYMENT_ID1,:PAYMENT_DETAILS1,:INVOICE_ID1,:PAYMENT_STATUS1,:PAYMENT_DATE1,:PAYMENT_AMOUNT1)}
+</sql-query>
+<sql-query name="paymentupdate">  
+    {CALL PAYMENT_UPDATE(:PAYMENT_ID1,:PAYMENT_DETAILS1,:INVOICE_ID1,:PAYMENT_STATUS1,:PAYMENT_DATE1,:PAYMENT_AMOUNT1)}
+</sql-query>
+ <sql-query name="paymentdelete">
+    {CALL PAYMENTS_DELETE(:PAYMENT_ID1)}
+</sql-query>
+ 
+<sql-query name="paymentselect" callable="true">
+    <return  class="com.support.Payment">
+       
+    </return>
+    <![CDATA[CALL  PAYMENT_SELECT(?,:PAYMENT_ID1)]]>
+</sql-query> 
+
+<sql-query name="paymentselectall" callable="true" > 
+ <return class="com.support.Payment" />
+ {call PAYMENTSELECTALL(?)} 
+     </sql-query>
+  
+  
+  
+  
+  
+<!--
+
+
+  
+<sql-query name="Pcinsert" callable="true"> <return class="com.techsea.ProductCat"/> {?=call Pcinsert(?,?,?,?,?)} </sql-query>
+
+-->
+</hibernate-mapping>

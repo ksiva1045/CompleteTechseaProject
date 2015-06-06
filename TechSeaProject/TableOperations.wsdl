@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://operations.table.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax21="http://support.com/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://operations.table.com">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://support.com/xsd">
+            <xs:complexType name="Dept">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="createdUserId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="deptName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="deptNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastModifiedDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastModifiedUserId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="location" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="userCreatedDate" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DeptArray">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="dept" nillable="true" type="ax21:Dept"/>
+                    <xs:element minOccurs="0" name="operationName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax22="http://support.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://operations.table.com">
+            <xs:import namespace="http://support.com/xsd"/>
+            <xs:element name="dummmy">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="str" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="dummmyResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="DeptOperations">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="d" nillable="true" type="ax22:Dept"/>
+                        <xs:element minOccurs="0" name="dArray" nillable="true" type="ax22:DeptArray"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="DeptOperationsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="dummmyRequest">
+        <wsdl:part name="parameters" element="ns:dummmy"/>
+    </wsdl:message>
+    <wsdl:message name="dummmyResponse">
+        <wsdl:part name="parameters" element="ns:dummmyResponse"/>
+    </wsdl:message>
+    <wsdl:message name="DeptOperationsRequest">
+        <wsdl:part name="parameters" element="ns:DeptOperations"/>
+    </wsdl:message>
+    <wsdl:message name="DeptOperationsResponse">
+        <wsdl:part name="parameters" element="ns:DeptOperationsResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="TableOperationsPortType">
+        <wsdl:operation name="dummmy">
+            <wsdl:input message="ns:dummmyRequest" wsaw:Action="urn:dummmy"/>
+            <wsdl:output message="ns:dummmyResponse" wsaw:Action="urn:dummmyResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="DeptOperations">
+            <wsdl:input message="ns:DeptOperationsRequest" wsaw:Action="urn:DeptOperations"/>
+            <wsdl:output message="ns:DeptOperationsResponse" wsaw:Action="urn:DeptOperationsResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="TableOperationsSoap11Binding" type="ns:TableOperationsPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="dummmy">
+            <soap:operation soapAction="urn:dummmy" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeptOperations">
+            <soap:operation soapAction="urn:DeptOperations" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="TableOperationsSoap12Binding" type="ns:TableOperationsPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="dummmy">
+            <soap12:operation soapAction="urn:dummmy" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeptOperations">
+            <soap12:operation soapAction="urn:DeptOperations" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="TableOperationsHttpBinding" type="ns:TableOperationsPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="dummmy">
+            <http:operation location="dummmy"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeptOperations">
+            <http:operation location="DeptOperations"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="TableOperations">
+        <wsdl:port name="TableOperationsHttpSoap11Endpoint" binding="ns:TableOperationsSoap11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/TableOperations"/>
+        </wsdl:port>
+        <wsdl:port name="TableOperationsHttpSoap12Endpoint" binding="ns:TableOperationsSoap12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/TableOperations"/>
+        </wsdl:port>
+        <wsdl:port name="TableOperationsHttpEndpoint" binding="ns:TableOperationsHttpBinding">
+            <http:address location="http://localhost:8080/axis2/services/TableOperations"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
